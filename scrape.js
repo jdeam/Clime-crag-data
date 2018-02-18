@@ -23,7 +23,7 @@ let scrape = async () => {
     return cragArr;
   });
 
-  for (let i=0; i<118; i++) {
+  for (let i=0; i<117; i++) {
     await page.goto(crags[i].url);
 
     const loc = await page.evaluate(() => {
@@ -43,7 +43,7 @@ let scrape = async () => {
     crags[i].lng = loc.lng;
   }
 
-  return crags;
+  return crags.slice(0, 117);
   browser.close();
 };
 
